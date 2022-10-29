@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Informações pessoais</title>
+</head>
+
+<body>
+    <main>
+        <h1>Qual sua idade ?</h1>
+        <h3>Informe sua data de nascimento</h3>
+        <form>
+            <label class="text">Data de nascimento :</label>
+            <input type="date" id="data" onchange="onChangeDate()">
+            <label class="text"> Idade:</label>
+            <textarea id="idade" rows="1" class="resultado" disabled></textarea>
+
+
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
