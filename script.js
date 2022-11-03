@@ -11,5 +11,5 @@ const birthDate = new Date(nasc);
       age--;
   }
   
-   return document.getElementById('idade').innerText = `Voçê ${age} anos de idade`;
+   return document.getElementById('idade').innerText = `Você tem ${age} anos de idade`;
 }
