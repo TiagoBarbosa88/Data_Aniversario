@@ -1,15 +1,20 @@
-function onChangeDate() {
+function pegarInput() {
 let nasc = document.getElementById('data').value
+let resultado = calcularIdade(idade)
+document.getElementById('idade').innerText = `Você tem ${idade} anos de idade`;
+}
 
 
-const today = new Date();
-const birthDate = new Date(nasc);
-  const age = today.getFullYear() - birthDate.getFullYear();
-  const m = today.getMonth() - birthDate.getMonth();
-  
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
+function calcular(idade){
+  const ano_atual = new Date();
+  const ano_nascimento = new Date(nasc);
+  const idade = ano_atual.getFullYear() - ano_nascimento.getFullYear();
+  const mes_nascimento = today.getMonth() - ano_nascimento.getMonth();
+
+  if (mes_nascimento < 0 || (mes_nascimento === 0 && ano_atual.getDate() < ano_nascimento.getDate())) {
+    idade--;
+   
   }
-  
-   return document.getElementById('idade').innerText = `Você tem ${age} anos de idade`;
+
+  return idade
 }
