@@ -1,20 +1,27 @@
 function pegarInput() {
-let nasc = document.getElementById('data').value
-let resultado = calcularIdade(idade)
-document.getElementById('idade').innerText = `Você tem ${idade} anos de idade`;
+    let nasc = document.getElementById("data").value;
+    let idade = calcular(nasc);
+
+    document.getElementById("idade").value =
+        `Você tem ${idade} anos de idade`;
 }
 
 
-function calcular(idade){
-  const ano_atual = new Date();
-  const ano_nascimento = new Date(nasc);
-  const idade = ano_atual.getFullYear() - ano_nascimento.getFullYear();
-  const mes_nascimento = today.getMonth() - ano_nascimento.getMonth();
+function calcular(nasc) {
+    const ano_atual = new Date();
+    const ano_nascimento = new Date(nasc);
+    let idade = ano_atual.getFullYear() - ano_nascimento.getFullYear();
 
-  if (mes_nascimento < 0 || (mes_nascimento === 0 && ano_atual.getDate() < ano_nascimento.getDate())) {
-    idade--;
-   
-  }
+    const diferencaMes =
+        ano_atual.getMonth() - ano_nascimento.getMonth();
 
-  return idade
+    if (
+        diferencaMes < 0 ||
+        (diferencaMes === 0 &&
+            ano_atual.getDate() < ano_nascimento.getDate())
+    ) {
+        idade--;
+    }
+
+    return idade;
 }
